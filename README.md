@@ -2,13 +2,10 @@ schedule-json-generator
 ===
 
 Generate schedule json file for OPass from Google Spreadsheet
-
-## How to
-- Make a copy from this [spreadsheet](https://docs.google.com/spreadsheets/d/1knHgrDErElEvj0W9GvFm-_uXk-GaXL3kA8sONq-EHv0/edit?usp=sharing).
-- Clone this repo, and copy the `config-sample.js` to `config.js`, modify it.
-- Generate!
 ## GitHub Actions
-You need to put your GCP API key in to `Repo's Settings` > `Secrets` > `Actions` > `New repository secret`
+You need to put your GCP API key into `Repo's Settings` > `Secrets` > `Actions` > `New repository secret`.
+
+After that, you can simply copy following code to your GitHub Actions workflow.
 ```yaml
 name: Generate Schedule Json file
 on:
@@ -16,14 +13,14 @@ on:
   - workflow_dispatch
 
 jobs:
-  schedule-json-generator:
+  generate-schedule-json:
     runs-on: ubuntu-latest
     name: Generate schedule
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate Schedule Json
-        uses: CCIP-App/schedule-json-generator@v1
+        uses: CCIP-App/schedule-json-generator-action@v1
         id: generate
         with:
           gcp-api-key: ${{ secrets.GCP_API_KEY }}
