@@ -5,9 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "@actions/core": "^1.9.0",
+    "@vercel/ncc": "^0.36.1",
     "spreadsheet-to-json": "^2.0.0"
   },
   "scripts": {
+    "release": "ncc build src/action.js && git add -f dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Denny Huang <denny0223@gmail.com>",

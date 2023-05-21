@@ -20,11 +20,10 @@ inputs:
   avatar-base-url:
     description: "Avatar base url"
     required: true
-
-outputs:
-  output-json:
-    description: "Output json string"
+  output-path:
+    description: "Output path"
+    required: true
 
 runs:
   using: 'node16'
-  main: 'action.js'
+  main: 'dist/index.js'
