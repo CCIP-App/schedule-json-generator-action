@@ -67861,8 +67861,8 @@ try {
     }
     core.debug(`Resolved path is ${resolvedPath}`)
 
-    fs.writeFileSync(resolvedPath, JSON.stringify(res));
-    core.info('Generate schedule successfully!')
+    fs.writeFileSync(resolvedPath, res);
+    core.info('🎉 Generate schedule successfully!')
   })()
 } catch (error) {
   core.setFailed(error.message);

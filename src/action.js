@@ -23,7 +23,7 @@ try {
     core.debug(`Resolved path is ${resolvedPath}`)
 
     fs.writeFileSync(resolvedPath, res);
-    core.info('Generate schedule successfully!')
+    core.info('🎉 Generate schedule successfully!')
   })()
 } catch (error) {
   core.setFailed(error.message);
