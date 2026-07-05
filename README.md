@@ -15,7 +15,7 @@ The spreadsheet must be readable without Google authentication:
 
 ```yaml
 - name: Generate Schedule Json
-  uses: CCIP-App/schedule-json-generator-action@v3
+  uses: CCIP-App/schedule-json-generator-action@v4
   with:
     spreadsheet-key: "198dUX5oH72Q7gaGt_SEPrON-QYNRdAu3f-F2Pg4uFoM"
     default-avatar: "https://sitcon.org/2018/static/img/staffs/stone.png"
@@ -29,7 +29,7 @@ The spreadsheet must be readable without Google authentication:
 npm install
 npm run release
 git commit
-git tag v3
+git tag v4
 ```
 
 Commit the generated `dist/` changes before tagging.

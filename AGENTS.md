@@ -19,7 +19,7 @@ bundling.
 
 - Run `npm install` after dependency changes.
 - Run `npm run release` after source changes so `dist/index.js` matches `src/`.
-- Major Action input changes should use a new major tag such as `v3`.
+- Major runtime, package, or input changes should use a new major tag such as `v4`.
 
 ## Verification
 

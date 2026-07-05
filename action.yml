@@ -1,10 +1,9 @@
-# https://help.github.com/en/articles/metadata-syntax-for-github-actions
-name: Generate Schedule Json file
-description: Generate Schedule Json file
-author: docker
+name: Generate Schedule JSON file
+description: Generate OPass schedule JSON from a public Google Spreadsheet.
+author: CCIP-App
 branding:
-  icon: 'anchor'
-  color: 'blue'
+  icon: "anchor"
+  color: "blue"
 
 inputs:
   spreadsheet-key:
@@ -21,5 +20,5 @@ inputs:
     required: true
 
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node24"
+  main: "dist/index.js"
