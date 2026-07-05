@@ -2,9 +2,7 @@
 
 Generate OPass schedule JSON from a public Google Spreadsheet in GitHub Actions.
 
-This action is a thin wrapper around `@ccip-app/schedule-json-generator`. The
-conversion logic lives in that package; this repository handles GitHub Action
-inputs, output file writing, and the bundled `dist/` artifact.
+This action is a thin wrapper around `@ccip-app/schedule-json-generator`. The conversion logic lives in that package; this repository handles GitHub Action inputs, output file writing, and the bundled `dist/` artifact.
 
 ## GitHub Actions
 
