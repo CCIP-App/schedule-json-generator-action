@@ -1,20 +1,22 @@
-# schedule-json-generator
+# schedule-json-generator-action
 
-Generate schedule json file for OPass from Google Spreadsheet
+Generate OPass schedule JSON from a public Google Spreadsheet in GitHub Actions.
+
+This action is a thin wrapper around `@ccip-app/schedule-json-generator`. The
+conversion logic lives in that package; this repository handles GitHub Action
+inputs, output file writing, and the bundled `dist/` artifact.
 
 ## GitHub Actions
 
-Create your GCP API key from https://console.developers.google.com/apis/credentials and enable Google Sheets API.
+The spreadsheet must be readable without Google authentication:
 
-You need to put your GCP API key into `Repo's Settings` > `Secrets` > `Actions` > `New repository secret`.
-
-After that, you can simply copy following code to your GitHub Actions workflow.
+- Share it with "Anyone with the link can view", or
+- Publish it to the web.
 
 ```yaml
 - name: Generate Schedule Json
-  uses: CCIP-App/schedule-json-generator-action@v2.1
+  uses: CCIP-App/schedule-json-generator-action@v3
   with:
-    gcp-api-key: ${{ secrets.GCP_API_KEY }}
     spreadsheet-key: "198dUX5oH72Q7gaGt_SEPrON-QYNRdAu3f-F2Pg4uFoM"
     default-avatar: "https://sitcon.org/2018/static/img/staffs/stone.png"
     avatar-base-url: "https://sitcon.org/2018/static/img/speaker/"
@@ -24,6 +26,10 @@ After that, you can simply copy following code to your GitHub Actions workflow.
 ## Release a new version
 
 ```bash
-npm i
+npm install
 npm run release
+git commit
+git tag v3
 ```
+
+Commit the generated `dist/` changes before tagging.
